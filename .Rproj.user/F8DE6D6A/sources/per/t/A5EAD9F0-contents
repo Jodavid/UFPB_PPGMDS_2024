@@ -1,0 +1,1618 @@
+---
+title: "Inteligência Artificial na Saúde"
+subtitle: "Conceitos, Visão geral sobre IA e utilizações na área da Saúde"
+author: "Jodavid Ferreira"
+institute: "UFPE"
+title-slide-attributes:
+  data-background-image: images/ml_background.png
+  data-background-size: contain
+  data-background-opacity: "0.2"
+format:
+  revealjs:
+    slide-number: c/t
+    #css: ["theme/theme.css"]
+    css: ["css/jodavid.css"]
+    theme: default #dark
+    footer: "Inteligência Artificial na Saúde - [Jodavid Ferreira](https://jodavid.github.io/)"
+    logo: "images/logo.png"
+    smaller: True
+    incremental: false
+    transition: concave
+    background-transition: convex
+    chalkboard: true
+editor_options: 
+  chunk_output_type: inline
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+
+::: {style="display: flex; align-items: center;"}
+<div style="font-size:16pt;">
+![](images/jodavid.jpg){style="margin: 50px 0 0 0; width: 750px; height: auto;"}
+
+Professor Depto. de Estatística da UFPE
+</div>
+
+<div style="font-size:18pt; margin:0px 0 0 0px;">
+<h4 style="text-align: left"> Quem é o Dr. Jodavid Ferreira? </h4>
+* Graduação em Estatística pela UFPB - 2015;
+* Mestrado em Estatística pela UFPE - 2017;
+* Doutor em Estatística pela UFPE - 2021;
+* Pós-Doutorado em Modelos de Decisão e Saúde (UFPB) - 2024;
+
+
+<h4 style="text-align: left"> Experiências e Linhas de Pesquisa </h4>
+* Processamento de Imagens;
+* Distribuições matriciais de Probabilidade;
+* Distribuições de Probabilidade Fuzzy;
+* Machine Learning, Deep Learning;
+
+<h4 style="text-align: left"> Experiências Profissionais - 2021 | 2024 </h4>
+* HartB Group e ThinkAI Group (Startups com foco em Inteligência Artificial);
+* Certificado em IA pela **Huawei** e em Engenharia de dados pela **Google**;
+
+</div>
+:::
+  
+  
+--------------------------------------------------------------------
+
+## Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+. . .
+
+
+<p style="font-size:25pt; text-align:center;">
+**Pense na pessoa mais inteligente que você conhece!!!**
+</p>
+
+. . .
+
+- O que você percebeu nessa pessoa para considerá-la como a mais inteligente para você?
+
+. . .
+
+- Ela é uma pessoa que pensa rápida? Ela é capaz de internalizar e aplicar novos conhecimentos imediatamente?
+
+. . .
+
+- Ela é altamente criativa, é capaz de gerar continuamente ideias novas
+que você nunca pensaria?
+
+. . .
+
+- Ela é uma pessoa altamente perceptiva e consegue captar todos os
+menores detalhes do mundo ao seu redor?
+
+. . .
+
+- Ou talvez, ela seja profundamente empática
+e entenda como você está se sentindo antes mesmo de você?
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+A **Inteligência**, mais especificamente **inteligência humana** é um termo interessante
+de discutir, ela envolve (Sternberg, 2000):
+
+<br/>
+
+- o *cérebro humano*, que é o órgão mais complexo do corpo humano;
+
+- a *mente*, sendo esta relacionada a capacidade de pensar, raciocinar, lembrar, entender e sentir;
+
+- o *pensamento lógico*, que é a capacidade de raciocinar e resolver problemas;
+
+- a *compreensão*, associado a capacidade de entender e interpretar informações;
+
+- a *aplicabilidade*, que vai de encontro a capacidade de aplicar conhecimentos e habilidade
+em sua maioria sendo em situações práticas;
+
+
+<br/>
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+- Independente de ser **gênios da matemática** ou **vendedores carismáticos**,
+nós utilizamos habilidades cognitivas
+como memória, atenção, reconhecimento de padrões, e outras habilidades
+para entender e ter sucesso no mundo todos os dias.
+
+
+<br/>
+
+. . .
+
+
+> Em geral, a **inteligência** pode ser bem definida
+como a capacidade de um indivíduo realizar tarefas efetivamente usando
+seu próprio conhecimento, interpretação e perspicácia.
+
+
+<br/>
+
+. . .
+
+-  O nível de inteligência varia de pessoa para pessoa em termos de
+como percebem e realizam ações.
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+- O conceito de IA está disponível desde a década de 1940 (Newell, 1982);
+
+<br/>
+
+- O primeiro método de computação baseado em *"inteligência"* foi introduzido pelo matemático **Alan Turing em 1947**. Ele afirmou que mais descobertas sobre a **inteligência das máquinas** poderiam ser obtidas usando programas de computador e simulação;
+
+<div style="text-align:center;">
+<img src="images/alan.png" width="300px">
+</div>
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+- Durante a década de 1950, Turing também discutiu as circunstâncias para considerar uma máquina tão inteligente como um humano. Ele opinou fortemente que qualquer máquina pode ser capaz de imitar e fingir que é um ser humano para outro humano, sem deixar dúvidas,  e assim ser considerado inteligente.
+
+<pre></pre>
+
+- Esse conceito de testar a inteligência da máquina, introduzido por **Alan Turing**, é conhecido como o ``Teste de Turing``.
+
+<pre></pre>
+
+- Qualquer máquina que complete com sucesso o **Teste de Turing** pode ser considerada inteligente, mas uma máquina extraordinariamente inteligente pode sempre imitar humanos mesmo sem conhecer muito sobre eles.
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+<h4>O que é o Teste de Turing?</h4>
+
+- Turing propôs seu conceito por meio do jogo chamado **"party test"**, também conhecido como **"teste de imitação"**
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="font-size:15pt;">
+
+- O conceito básico deste jogo é descobrir se o participante é humano ou um computador. 
+
+- O *cenário 1* do teste consiste em três jogadores, onde o primeiro jogador é um "homem", o segundo jogador é uma "mulher" e o terceiro jogador é o "interrogador", que pode ser tanto um homem quanto uma mulher. Os dois primeiros jogadores estarão em salas diferentes, e o interrogador não sabe quem são os jogadores. Agora, o desafio do interrogador é descobrir o gênero dos dois primeiros jogadores com base nas respostas escritas dadas por eles para as perguntas feitas pelo interrogador. Outro desafio será criado fazendo com que o primeiro jogador dê intencionalmente respostas incorretas às perguntas, o que pode induzir o interrogador a inferir que o primeiro jogador é uma "mulher" em vez de um "homem". A @fig-turing mostra o cenário do *teste de imitação*.
+
+</div>
+
+:::
+
+::: {.column width="50%"}
+
+
+![Cenário 1 no Teste de Turing.](images/cap1/fig4_1.png){#fig-turing}
+
+:::
+
+::::
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<h4>O que é o Teste de Turing?</h4>
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="52%"}
+
+<div style="font-size:17pt;">
+
+- Turing tentou projetar este jogo com uma pequena alteração, na qual substituiu um dos dois primeiros jogadores por um computador no cenário de teste 2.
+
+- Ele analisou se a máquina tinha a capacidade de agir como um jogador humano aplicando sua própria inteligência.
+
+- Ele provou através do teste que o computador tem uma melhor capacidade de confundir o interrogador com sua inteligência, de modo que o interrogador tem a possibilidade de interpretar erroneamente o primeiro jogador como humano em vez de computador.
+
+- A inteligência da máquina foi comprovada através do teste de Alan Turing e amplamente aceita pela comunidade de pesquisa na época.
+
+
+</div>
+
+:::
+
+::: {.column width="48%"}
+
+
+![Cenário 2 no Teste de Turing.](images/cap1/fig5_1.png){#fig-turing2}
+
+:::
+
+::::
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<br/>
+
+
+- Entretanto, o termo "Inteligência Artificial" efetivamente cunhado por **John McCarthy**
+em 1956, em uma conferência no Dartmouth College,
+marcando o início de uma nova era nos estudos de pesquisa em IA (McCorduck and Cfe, 2004).
+
+<pre></pre>
+
+. . .
+
+- E com esse novo termo e ramo de pesquisa, os objetivos estavam/estão à missão de usar
+computadores e a ciência para estudar e reproduzir a **inteligência** e as **habilidades de tomadas de decisão** associadas a um ser humano.
+
+<pre></pre>
+
+. . .
+
+- Assim, a utilização da IA é investigar a viabilidade de máquinas simularem aspectos do intelecto humano através de modelos  computacionais e algoritmos, que foram impulsionadas pelos trabalhos de pesquisadores como Turing, Shannon, McCarthy, Minsky, entre outros.
+
+<!--
+seminais em lógica, raciocínio automatizado e redes neurais 
+-->
+
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+![Timeline 1 da IA.(fonte:Weijermars, et.al. )](images/timeline1.png){#timeline1 fig-align="center" width="100%"}
+
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+![Timeline 2 da IA.(fonte: Momentum Works report – The future by ChatGPT)](images/timeline2.png){#timeline1 fig-align="center" width="100%"}
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+![(fonte: AI Experience - Google)](images/google/ia_generativa.png){#timeline1 fig-align="center" width="100%"}
+
+
+<!-- Motivação -->
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+Existem três abordagens da Inteligência Artificial:
+
+. . .
+
+<div class="contrib" style="font-size:15pt">
+
+  <div class="blockin" style="font-size:15pt">
+  Behaviorismo
+  </div>
+
+é uma escola de pensamento que diz que a inteligência depende da **percepção e da ação**.
+Assim, o comportamento da inteligência só pode ser demonstrado no mundo real
+através da constante interação com o meio.
+
+</div>
+
+<!--
+Portanto, podemos citar o método de
+aprendizado por reforço como sendo um dos seus principais representantes. Tendo em
+vista que segundo este método o aprendizado se dá através de “tentativas”, as quais são
+oferecidas recompensas e penalidades.
+-->
+
+<p/> 
+
+. . .
+
+<div class="contrib" style="font-size:15pt">
+
+  <div class="blockin" style="font-size:15pt">
+  IA Simbólica
+  </div>
+
+tenta replicar a inteligência humana, como a capacidade de resolver problemas através de regras e lógica.
+Por meio de *símbolos*, como palavras e conceitos, uma estrutura lógica é organizada que permite ao sistema de IA realizar as tarefas.
+
+</div>
+
+<p/> 
+
+.  .  .
+
+<div class="contrib" style="font-size:15pt">
+
+  <div class="blockin" style="font-size:15pt">
+  IA Conexionista
+  </div>
+
+é baseada na simulação dos componentes do cérebro (modelagem da inteligência humana), como neurônios e sinapses. Aqui as soluções são baseadas em padrões e aprendizado de máquina, tentando imitar o funcionamento do cérebro humano.
+</div>
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+. . .
+
+- Exemplo de Behaviorismo: Aprendizado por reforço (Reinforcement Learning)
+
+![](images/refole.gif){style="margin-left: 300px; width: 250px; height: auto;"}
+
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Exemplo de IA Simbólica: Sistemas Especialistas
+
+![](images/expert_system.gif){style="margin: 0 0 0 0; width: 300px; height: auto;"}
+
+:::
+
+::::
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%" style="margin:-315px 0 0 520px"}
+
+- Exemplo de IA Conexionista: Redes Neurais - CNN
+
+![](images/cnn.gif){style="margin: 0 0 0 0; width: 300px; height: auto;"}
+
+:::
+
+::::
+
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+<pre></pre>
+
+. . .
+
+A Inteligência Artificial é dividida em duas partes:
+
+. . .
+
+<div class="contrib">
+
+  <div class="blockin">
+  Inteligência Artificial Geral ou IA Forte
+  </div>
+
+é quando uma máquina realmente entende o que está acontecendo. Podem existir emoções
+e criatividade. Na maior parte, é o que vemo em filmes de ficção científica.
+
+</div>
+
+<br/>
+
+
+<div class="contrib">
+
+  <div class="blockin">
+  IA Fraca
+  </div>
+
+é quando uma máquina realiza a correspondência entre padrões, e está relacionada a tarefas específicas,
+e as capacidades não são facilmente transferíveis para outros sistemas.
+
+</div>
+
+---
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+
+### Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+
+::: {.r-hstack}
+::: {data-id="box1" auto-animate-delay="0" style="background: #ed7f30; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:40%;">**Inteligência Artificial**</div>
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #f8cbac; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:45%;">**Machine Learning**</div>
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #fbe5d8; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:45%;">**Deep Learning**</div>
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #fbe5d830; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:45%;">**IA Generativa**</div>
+:::
+:::
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+### Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+
+::: {.r-stack}
+::: {data-id="box1" style="background: #ed7f30; width: 550px; height: 550px; border-radius: 500px;"}
+<div style="text-align:center; position: relative; top:3%">**Inteligência Artificial**</div>
+:::
+
+::: {data-id="box2" style="background: #f8cbac; width: 425px; height: 425px; border-radius: 425px;"}
+<div style="text-align:center; position: relative; top:5%;">**Machine Learning**</div>
+:::
+
+::: {data-id="box3" style="background: #fbe5d8; width: 300px; height: 300px; border-radius: 200px;"}
+<div style="text-align:center; position: relative; top:5%;">**Deep Learning**</div>
+:::
+
+::: {data-id="box3" style="background: white; width: 150px; height: 150px; border-radius: 100px;"}
+<div style="text-align:center; position: relative; top:20%;">**IA Generativa**</div>
+:::
+:::
+
+
+
+
+
+---
+
+## Ambiente da IA
+
+<hr/>
+
+<div style="font-size:16pt;">
+
+O ambiente de **inteligência artificial** consiste em cinco componentes principais:
+
+</div>
+
+. . .
+
+
+<div style="font-size:16pt;">
+
+- **Máquina:** é um componente básico e implícito tanto em ambientes não baseados em IA quanto em ambientes baseados em IA;
+
+
+</div>
+
+. . .
+
+<div style="font-size:16pt;">
+
+
+- **Inteligência Humana:** esse componente é essencial para incorpor *'inteligência'* à máquina, para que ela atue como uma máquina inteligente carregando *inteligência humana*, na forma de uma lista de instruções também chamada de programas, *softwares* ou codificação;
+
+
+</div>
+
+. . .
+
+<div style="font-size:16pt;">
+
+- **Internet das Coisas (IoT):**  Atualmente, a Internet das Coisas (IoT) têm uma relação muito próxima com o ambiente de IA, uma vez que a maioria das atuais tomadas de decisão dependem dos dados que são produzidos em tempo real pelos humanos e pelas máquinas;
+
+
+</div>
+
+. . .
+
+<div style="font-size:16pt;">
+
+- **Algoritmos de Aprendizado de Máquina (ML):** algoritmos de aprendizado de máquina desempenham um papel importante, na IA. Esses algoritmos são muito úteis na previsão de eventos com base nos dados disponíveis. Dentres os tipos de aprendizados estão os supervisionados (Regressão, Classificação), não supervisionados (métodos de agrupamento, redução de dimensionalidade), entre outros.
+
+
+</div>
+
+
+. . .
+
+<div style="font-size:16pt;">
+
+
+- **Ciência e Engenharia de Dados:** A Ciência e Engenharia de Dados é outro componente importante no ambiente de IA. A análise de dados desempenha um papel importante na maioria das aplicações em tempo real, pois qualquer tomada de decisão feita pela máquina por meio de programação depende principalmente da análise eficiente de dados.
+
+</div>
+
+
+
+---
+
+## Ambiente da IA
+
+<hr/>
+
+<div style="font-size:16pt;">
+
+O ambiente de **inteligência artificial** consiste em cinco componentes principais:
+
+</div>
+
+
+
+<div style="font-size:16pt;">
+
+- **Máquina:** é um componente básico e implícito tanto em ambientes não baseados em IA quanto em ambientes baseados em IA;
+
+
+</div>
+
+
+<div style="font-size:16pt;">
+
+
+- **Inteligência Humana:** esse componente é essencial para incorpor *'inteligência'* à máquina, para que ela atue como uma máquina inteligente carregando *inteligência humana*, na forma de uma lista de instruções também chamada de programas, *softwares* ou codificação;
+
+
+</div>
+
+
+<div style="font-size:16pt;">
+
+- **Internet das Coisas (IoT):**  Atualmente, a Internet das Coisas (IoT) têm uma relação muito próxima com o ambiente de IA, uma vez que a maioria das atuais tomadas de decisão dependem dos dados que são produzidos em tempo real pelos humanos e pelas máquinas;
+
+
+</div>
+
+
+<div style="font-size:16pt;color:red;">
+
+- **Algoritmos de Aprendizado de Máquina (ML):** algoritmos de aprendizado de máquina desempenham um papel importante, na IA. Esses algoritmos são muito úteis na previsão de eventos com base nos dados disponíveis. Dentres os tipos de aprendizados estão os supervisionados (Regressão, Classificação), não supervisionados (métodos de agrupamento, redução de dimensionalidade), entre outros.
+
+
+</div>
+
+
+
+<div style="font-size:16pt; color:red;">
+
+
+- **Ciência e Engenharia de Dados:** A Ciência e Engenharia de Dados é outro componente importante no ambiente de IA. A análise de dados desempenha um papel importante na maioria das aplicações em tempo real, pois qualquer tomada de decisão feita pela máquina por meio de programação depende principalmente da análise eficiente de dados.
+
+</div>
+
+
+
+---
+
+## Machine Learning
+
+<hr/>
+
+<br/>
+
+
+> **Machine Leaning (ML) ou Aprendizado de máquina (AM)** é um subcampo da
+Inteligência Artificial que estuda, desenvolve e analisa os algoritmos de aprendizado.
+Através de utilização dos métodos de AM, modelos baseado em dados podem ser criados
+para solucionar um determinado tipo de problema específico que de IA, dentre eles,
+aprendizados supervisionados, não supervisionados e aprendizagem por reforço.
+
+<div style="text-align:center;">
+<img src="images/ml.webp" width="400px">
+</div>
+
+
+---
+
+
+## Machine Learning
+
+<hr/>
+
+<div class="contrib">
+
+Inicialmente, as aplicações que eram consideradas de AM eram  apenas as desenvolvidas
+estritamente pela comunidade da computação, contudo, no final dos anos 90,
+as aplicações de AM começaram a ter intersecções com as de **estatística**.
+</div>
+
+. . .
+
+<p></p>
+
+<div class="contrib">
+
+Atualmente, a comunidade de AM é bastante interdisciplinar, sendo a **estatística** uma das áreas. Enquanto que até os anos 90, métodos criados pela estatística começavam a ser incorporados
+em AM, atualmente a direção oposta está cada vez mais comum: **métodos desenvolvidos por AM começaram a ser usados em estatística**.
+
+</div>
+
+. . .
+
+<p></p>
+
+<div class="contrib">
+
+Dessa forma, hoje os algoritmos existentes em ***Machine Learning e Inteligência Artificial*** possuem como base em sua maioria conceitos da **Estatística e Computação**.
+
+ </div>
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<h4>Quais as *hype* do momento?</h4>
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- <div style="color:red;">OpenAI:</div>
+  - **DALL-E** - modelo de geração de imagens;
+  - **ChatGPT** - modelo de linguagem natural;
+  - **SORA** - modelo de texto-para-vídeo;
+  - **Whisper** - modelo de audio-para-texto;
+
+- <div style="color:red;">Meta:</div>
+  - **T5** - modelo de tradução de linguagem natural;
+  - **Llamma3.1** - modelo de linguagem natural;
+
+:::
+
+::: {.column width="50%"}
+
+- <div style="color:red;">Google:</div>
+  - **BERT** - modelo de linguagem natural;
+  - **GEMINI** - modelo multimodal;
+  - **LaMDA** - modelo de linguagem natural;
+
+  
+- <div style="color:red;">Anthropic:</div>
+  - **CLAUDE 3** - modelo de linguagem natural;
+
+:::
+
+::::
+
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+<div style="text-align: center;">
+{{< video https://www.youtube.com/watch?v=wa0MT8OwHuk&t=2s width="850" height="459">}}
+</div>
+
+**GEMINI** é um modelo de IA desenvolvido pelo Google que pode entender e gerar texto, através de próprios textos, imagens e áudio. O modelo é capaz de responder a perguntas, criar histórias e até mesmo compor músicas.
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+<div style="text-align: center;">
+{{< video https://youtu.be/HK6y8DAPN_0?si=beJJcR030aWa8bx1 width="850" height="459" controls >}}
+</div>
+
+
+**SORA** é um modelo de IA desenvolvido pela OpenAI que pode transformar texto em vídeo. O modelo é capaz de criar vídeos de alta qualidade a partir de descrições de texto.
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+<div style="text-align: center;">
+{{< video https://youtu.be/nEHCBPGo-5M?si=lUaCWB-jfBPFv_Mi width="900" height="479" style="text-align: center;">}}
+</div>
+
+
+
+**Wonder Studio** é um estúdio de animação japonês que utiliza IA para criar personagens e histórias. O estúdio foi fundado por **Yoichi Ochiai**, um artista e pesquisador de IA.
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+<div style="text-align: center;">
+{{< video images/video/home-video.3953bf63.mp4 width="900" height="479" >}}
+</div>
+
+
+
+**Viggle AI** é uma empresa que utiliza inteligência artificial para criar animações e vídeos.
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<div style="text-align: center;">
+{{< video images/video/ssstwitter.com_1715622047183.mp4 width="900" height="479" >}}
+</div>
+
+
+
+**GPT-4o** da OpenAI, modelo multimodal que consegue interpretar áudio, visão e texto em tempo real.
+
+
+---
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<div style="text-align: center;">
+{{< video https://youtu.be/7GaKl6HwZ50?si=wDsLe_5y4aHIqGKQ width="900" height="479" >}}
+</div>
+
+
+
+**GPT-o1** da OpenAI, é uma solução que "tem fortes capacidades de raciocínio e amplo conhecimento do mundo".
+
+
+--------------------------------------------
+
+<br/> <br/>
+<br/> <br/>
+<br/> <br/>
+
+<hr/>
+
+<h1 style="text-align: center;">
+
+IA na área da Saúde
+
+</h1>
+
+<hr/>
+
+----
+
+
+## Aplicações de IA na Saúde
+
+<hr/>
+
+> #### A Survey of Large Language Models in Medicine: Progress, Application, and Challenge^[https://arxiv.org/abs/2311.05112 e https://github.com/AI-in-Health/MedLLMsPracticalGuide]
+
+- Este artigo fornece uma visão detalhada sobre o desenvolvimento e a implementação de Modelos de Linguagem de Grande Escala (LLMs) na área da saúde: aborda aplicações práticas, desafios e oportunidades;
+
+
+<div style="text-align: center;">
+![](images/app2/guide.png){style="margin: -30px 0 0 0; width:700px; height: auto;"}
+</div>
+
+
+----
+
+
+## Aplicações de IA na Saúde
+
+<hr/>
+
+<br/>
+
+<div style="text-align:center; font-size:26pt;color:red;">
+Quais são os objetivos de LLM para saúde?
+</div>
+
+. . . 
+
+- Objetivo 1: Superar a competência de nível humano.
+
+<pre>
+
+
+<div style="text-align: center;">
+![](images/app2/Medical_LLM_evolution.png){style="margin: -30px 0 0 0; width:700px; height: auto;"}
+</div>
+
+
+----
+
+
+## Aplicações de IA na Saúde
+
+<hr/>
+
+<br/>
+
+<div style="text-align:center; font-size:26pt;color:red;">
+Quais são os objetivos de LLM para saúde?
+</div>
+
+
+- Objetivo 2: Propriedades Emergentes de LLMs Médicos com o Aumento do Tamanho do Modelo^[Melhorar a capacidade dos modelos para uma maior precisão em diagnósticos ou a habilidade de lidar com tarefas mais complexas.].
+
+<pre>
+
+
+<div style="text-align: center;">
+![](images/app2/Medical_LLM_parameter_new.png){style="margin: -30px 0 0 0; width:700px; height: auto;"}
+</div>
+
+
+----
+
+
+## Aplicações de IA na Saúde
+
+<hr/>
+
+<br/>
+
+<div style="text-align: center;">
+![](images/app2/Medical_LLMs_tree.png){style="margin: -30px 0 0 0; width:630px; height: auto;"}
+</div>
+
+
+
+----
+
+
+## Aplicações de IA na Saúde
+
+
+<hr/>
+
+<br/>
+
+
+<div style="text-align: center;">
+![](images/google/medpalm.png){style="position: absolute; margin: -90px 0 0 230px; width: 300px; height: auto;"}
+</div>
+
+
+<h2> Med-PaLM </h2>
+
+. . .
+
+- O Med-PaLM é um modelo de linguagem grande (LLM) projetado para fornecer respostas de alta qualidade a perguntas médicas, baseado no modelo de linguagem PaLM 2, uma nova iteração do modelo de linguagem da Google que trouxe melhorias significativas em várias tarefas de benchmark para grandes modelos de linguagem (LLMs).
+
+- **O Med-PaLM 2 foi o primeiro a atingir o nível de especialista humano em responder perguntas no estilo USMLE^[O padrão "USMLE" em medicina refere-se a um estilo de perguntas utilizado em exames de licenciamento médico nos Estados Unidos, que avalia o conhecimento e a capacidade de tomar decisões clínicas dos futuros médicos.].**
+
+- Como forma de melhorar o modelo com novas informações (novos *datasets*), foi utilizado o treinamento via *Finetuning*;
+
+
+----
+
+
+## Aplicações de IA na Saúde
+
+<hr/>
+
+<div style="font-size:20pt">
+
+- As bases de dados utilizados foram: 
+
+  1. **MedQA (USMLE)**: Conhecimento médico geral no exame de licenciamento médico dos EUA.
+  2. **MedMCQA**: Conhecimento médico geral em exames de admissão médica indianos.
+  3. **PubMedQA**: Literatura científica biomédica.
+  4. **MMLU**: Conhecimento médico abrangendo anatomia, conhecimento clínico, medicina universitária, genética médica, medicina profissional, e biologia universitária.
+  5. **LiveQA**: Conhecimento médico geral procurado pelos consumidores.
+  6. **MedicationQA**: Conhecimento sobre medicamentos frequentemente
+  procurado pelos consumidores
+  7. **HealthSearchQA**: Conhecimento médico geral procurado
+  pelos consumidores (*Google*).
+
+Que são consideradas bases de dados médicas que cobrem amplamente o conhecimento clínico e incluem.
+
+</div>
+
+----
+
+
+## Aplicações de IA na Saúde
+
+<hr/>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Exemplo de utilização:
+
+<div style="text-align: center;">
+![](images/google/med-palm2.gif){style="margin: 0 0 0 0; width: 300px; height: auto;"}
+</div>
+
+:::
+
+::::
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%" style="font-size: 15pt; margin: -415px 0 0 520px"}
+
+**Você pode me descrever uma análise sobre Raio-X?**
+
+<br/>
+
+**Achados:**
+
+* Dispositivos: Nenhum.
+* Pulmões: Sem pneumotórax. Sem derrame pleural significativo. Pulmões parecem claros.
+* Cardiomediastinal: Tamanho normal do coração. Contornos mediastinais dentro dos limites normais.
+* Outros: Nenhuma anormalidade esquelética aguda.
+
+**Impressão:**
+Nenhuma doença ativa observada no tórax.
+
+:::
+
+::::
+
+
+- Link: <https://sites.research.google/med-palm/>
+- Link do paper no *nature*; <https://www.nature.com/articles/s41586-023-06291-2>
+
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+- *Tokens* e *Embeddings* são a base dos modelos de LLMs.
+
+. . .
+
+A **tokenização** é o processo de pegar o texto e transformar as sequências de entrada para números.
+
+  - é um mapeamento direto de *palavras* para números, a mesma palavra vai receber o mesmo *token* (pode ser modelado, mas rapidamente se torna muito grande).
+  - os *tokens* geralmente são palavras, mas também podem ser frases, sinais de pontuação ou até caracteres individuais.
+  - A tokenização é o primeiro passo no processamento de linguagem natural (NLP) e é essencial para a pré-processamento de texto.
+  - ela ajuda a preparar os dados textuais para análise, tornando-os mais estruturados e fáceis de trabalhar.
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+
+![](images/token2.webp){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+
+
+Apesar da referẽncia, palavras grandes podem ser divididas em *subtokens* menores, sendo assim, em 1.000 tokens de palavras em português correspondem aproximadamente a 700 a 750 palavras do nosso idioma.
+
+Essa contagem de palavras em um texto pode variar bastante dependendo da linguagem, do tamanho das palavras e do uso de pontuações.
+
+::: {style="align-items: center;"}
+![](images/token_embeddings.gif){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+:::
+
+
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+
+   - *Embeddings* são vetores numéricos obtidos dos *tokens* e representam palavras, frases ou documentos.
+
+- Os *embeddings* é o processo de transformar o mapeamento do vetor de texto de entrada na matriz de embeddings^[Alguns modelos já incorporam o processo de tokenização.].
+
+- Os *embeddings* faz uma representação mais rica do relacionamento entre os tokens (pode limitar o tamanho e pode ser aprendida).
+
+- Os *embeddings* conseguem capturar a estrutura semântica das palavras ou frases e suas relações no texto.
+
+- Atualmente, elas são criadas usando técnicas de *machine learning*, como Word2Vec ou GloVe e *deep learning*, como BERT, GPT-3, e os modelos mais atuais de LLMs.
+
+---
+
+
+## Tokens e Embeddings
+
+<hr/>
+
+
+![](images/embedd2.webp)
+
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+<br/>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="font-size:18pt">
+
+- As *word embeddings* transformam os valores inteiros únicos obtidos a partir do tokenizador em um array $n$-dimensional.
+
+- Por exemplo, a palavra 'gato' pode ter o valor '20' a partir do tokenizador, mas a camada de *embedding*  utilizará todas as palavras no seu vocabulário associadas a 'gato' para construir o vetor de *embeddings*. Ela encontra "dimensões" ou características, como "ser vivo", "felino", "humano", "gênero", etc.
+
+
+- Assim, a palavra 'gato' terá valores diferentes para cada dimensão/característica.
+
+
+
+</div>
+
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+
+![](images/word-embeddings.png){style="margin: 0 0 0 0; width:1550px;"}
+
+:::
+
+::::
+
+
+
+---
+
+
+## Tokens e Embeddings
+
+<hr/>
+
+<!-- <h3 style="text-color:red">Vamos ver um exemplo em python!^[https://colab.research.google.com/drive/1xUh4k-JPsi3gYmUZXs07fWwBkLXc8jdN]</h3> -->
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="font-size:18pt">
+
+Detalhes importantes:
+
+Similaridade do Cosseno ($Sim_{cos}$):
+
+- Maior valor (próximo de 1): Maior similaridade.
+- Menor valor (próximo de -1): Maior dissimilaridade.
+
+Distância do Cosseno ($D_{cos} = 1 - Sim_{cos}$):
+
+- Maior valor (próximo de 2): Maior dissimilaridade.
+- Menor valor (próximo de 0): Maior similaridade.
+
+
+</div>
+
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+
+<br/>
+
+![](images/simi_eq.png){style="margin: 0 0 0 0; width:550px;"}
+<br/>
+
+![](images/Cosine-similarity.jpg){style="margin: 0 0 0 0; width:550px;"}
+
+:::
+
+::::
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+Alguns conceitos importantes quando se trabalha com algoritmos de LLMs, são:
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="font-size:18pt">
+
+- **Tokenização**: Os dados de entrada são divididos em tokens, focando em texto, é a associação de número inteiro único para cada palavra ou sub-palavra;
+
+- **Embedding**: cada *token* é transformado em um vetor denso (*embedding*);
+
+- **Camadas de Encoder**: são responsáveis por processar e refinar os embeddings;
+
+- **Self-Attention Mechanism**: Cada token na sequência avalia a importância de todos os outros tokens, permitindo a incorporação de contexto global em cada embedding.
+
+- **Saída do Encoder**: O resultado das camadas de encoder é um conjunto de embeddings contextuais, onde cada token embedding contém informações sobre todo o contexto da sequência.
+
+</div>
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+
+![Modelo de Arquitetura de um Transformer. fonte: (Vaswani et al., 2017)](images/google/tranformers_left.png){style="margin: 0 0 0 0; width:350px;"}
+
+:::
+
+::::
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+Alguns conceitos importantes quando se trabalha com algoritmos de LLMs, são:
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="font-size:18pt">
+
+- **Preparação da Entrada do Decoder**: A entrada do decoder é preparada os embeddings contextuais do encoder;
+
+- **Camada de Self-Attention do Decoder**: Semelhante ao encoder, o decoder usa múltiplas cabeças de atenção para capturar diferentes aspectos da relação entre tokens, mas respeitando a ordem causal;
+
+-  **Camada de Atenção Encoder-Decoder**: A camada de atenção encoder-decoder permite que o decoder se concentre em diferentes partes da entrada do encoder, dependendo do token que está sendo gerado.
+
+-  **Saída do Decoder**: O resultado do decoder é um conjunto de embeddings contextuais finais, que são usados para prever o próximo token na sequência de saída.
+
+- **Predição do Próximo Token**: O modelo prediz o próximo token na sequência de saída com base nos embeddings contextuais finais.
+
+
+</div>
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+
+![Modelo de Arquitetura de um Transformer. fonte: (Vaswani et al., 2017)](images/google/tranformers_right.png){style="margin: 0 0 0 0; width:350px;"}
+
+:::
+
+::::
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+- Os modelos possuem alguns hiperparâmetros ajustáveis para inferência dos retornos.
+
+  - Os principais são *Temperatura*, *Top k* e *Top p* (geralmente eles mantém essa ordem de execução no modelo).
+
+Entretanto, vamos falar primeiramente definições de *Top-k* e *Top-p* e depois
+detalharemos sobre a *Temperatura*.
+
+. . .
+
+1. **Top-k**  
+O parâmetro *top-k* limita as previsões do modelo aos *k* tokens mais prováveis em cada etapa da geração. Ao definir um valor para *k*, você está instruindo o modelo a considerar apenas os *k* tokens mais prováveis. Isso pode ajudar a ajustar a saída gerada e garantir que ela siga padrões ou restrições específicas.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+2. *Top-p*, também conhecido como amostragem por núcleo (*nucleus sampling*), controla a probabilidade cumulativa dos tokens gerados. O modelo gera tokens até que a probabilidade cumulativa exceda o limite escolhido (*p*). Essa abordagem permite um controle mais dinâmico sobre o comprimento do texto gerado e incentiva a diversidade na saída, incluindo tokens menos prováveis quando necessário.
+
+> O *top-k* proporciona uma aleatoriedade controlada ao considerar um número fixo de tokens mais prováveis, enquanto o *top-p* permite um controle dinâmico sobre o número de tokens considerados, resultando em diferentes níveis de diversidade no texto gerado.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+A **probabilidade cumulativa** refere-se ao somatório das probabilidades de um conjunto de eventos ou opções, somadas em ordem decrescente de probabilidade até que um certo limite seja atingido
+
+<!--
+No contexto de **geração de texto com modelos de linguagem**, a probabilidade cumulativa é usada no método de amostragem por núcleo (*top-p*), onde o modelo gera tokens com base em uma parte selecionada das probabilidades mais altas.
+-->
+
+#### Exemplo:
+
+Suponha que o modelo tenha os seguintes tokens candidatos, com suas probabilidades associadas:
+
+| Token    | Probabilidade |
+|----------|----------------|
+| Token A  | 0,40           |
+| Token B  | 0,30           |
+| Token C  | 0,15           |
+| Token D  | 0,10           |
+| Token E  | 0,05           |
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+<br/>
+
+Agora, se você definir *top-p = 0,85*, o modelo irá selecionar tokens até que a **probabilidade cumulativa** atinja 0,85.
+
+1. Token A: 0,40 (probabilidade cumulativa = 0,40)
+2. Token B: 0,30 (probabilidade cumulativa = 0,40 + 0,30 = 0,70)
+3. Token C: 0,15 (probabilidade cumulativa = 0,70 + 0,15 = 0,85)
+
+Assim, apenas os tokens A, B e C serão considerados, pois a soma de suas probabilidades atinge 0,85. Tokens com probabilidade mais baixa (como D e E) serão excluídos da escolha, a menos que *top-p* seja aumentado.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+3. *Temperatura*: em geral é aplicada primeiro. Ela ajusta as probabilidades de todos os *tokens* candidatos, "suavizando" ou "acentuando" a distribuição de probabilidade.
+
+  - Com uma temperatura baixa (próxima de 0), as probabilidades mais altas se destacam, e o modelo tende a ser mais conservador, escolhendo sempre os tokens mais prováveis. Com uma temperatura alta (próxima de 1), a distribuição fica mais uniforme, permitindo maior aleatoriedade.
+  
+. . .
+
+
+#### Função de Ativação softmax:
+  
+![](images/softmax.webp){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+O parâmetro de temperatura é aplicado diretamente à função softmax.
+
+![](images/softmax_t.webp){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+
+
+
+**Efeito da Temperatura**  
+
+À medida que a temperatura se aproxima de 0, as probabilidades de saída se tornam mais "agudas". Uma das probabilidades ficará próxima de 1.
+
+Conforme a temperatura aumenta, as probabilidades de saída se tornam mais "planas" ou "uniformes", reduzindo a diferença entre as probabilidades dos diferentes elementos.
+
+> O intervalo do parâmetro de temperatura é definido entre 0 e 1 na documentação da OpenAI. No contexto da [Cohere](https://cohere.com/blog/llm-parameters-best-outputs-language-ai), os valores de temperatura estão dentro do intervalo de 0 a 5.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+Código em python para analisar-mos a temperatura^[https://medium.com/@balci.pelin/llm-temperature-659d443b855a]:
+
+```{python eval=F, echo=T}
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create dataset
+df = pd.DataFrame(
+    {"Word": ["donut", "bolo", "maçã", "suco", "livro"],
+     "Logit": [0.216, 0.206, 0.212, 0.210, 0.157]}
+)
+
+# Calculate softmax for different temperatures
+temperatures = [0.1, 0.5, 0.8, 1.0]
+for temp in temperatures:
+    col_name = f"softmax, temp={temp}"
+    df[col_name] = np.round(np.exp(df.Logit / temp) / np.sum(np.exp(df.Logit / temp)), 4)
+
+# Drop the "Logit" column
+df_plot = df.drop("Logit", axis=1)
+
+# Set up colors for the columns
+colors = ['orange', 'green', 'red', 'purple', 'brown']
+
+# Plotting
+df_plot.set_index("Word").plot(kind="bar", color=colors, width=0.8)
+
+# Customize plot
+plt.xlabel('Possible Words')
+plt.ylabel('Output')
+plt.title('Temperature Analysis')
+plt.legend(title="Legend", bbox_to_anchor=(1, 1))
+plt.show()
+
+```
+
+
+<!--
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+```{python, eval=T,echo=F}
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create dataset
+df = pd.DataFrame(
+    {"Word": ["donut", "cake", "apple", "juice", "book"],
+     "Logit": [11, 10.5, 10.8, 10.7, 8]}
+)
+
+# Calculate softmax for different temperatures
+temperatures = [1, 0.8, 0.5, 0.1]
+for temp in temperatures:
+    col_name = f"softmax, temp={temp}"
+    df[col_name] = np.round(np.exp(df.Logit / temp) / np.sum(np.exp(df.Logit / temp)), 4)
+
+# Drop the "Logit" column
+df_plot = df.drop("Logit", axis=1)
+
+# Set up colors for the columns
+colors = ['orange', 'green', 'red', 'purple', 'brown']
+
+# Plotting
+df_plot.set_index("Word").plot(kind="bar", color=colors, width=0.8)
+
+# Customize plot
+plt.xlabel('Possible Words')
+plt.ylabel('Output')
+plt.title('Temperature Analysis')
+plt.legend(title="Legend", bbox_to_anchor=(1, 1))
+plt.show()
+
+```
+
+-->
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+Em termos práticos, alguns problemas que temos com LLMs (SLMs) são:
+
+
+
+- **Alucinações**: o modelo gera informações que não estão presentes nos dados de treinamento;
+
+<p></p>
+
+- **Viés**: o modelo pode reproduzir e amplificar preconceitos e estereótipos presentes nos dados de treinamento;
+
+<p></p>
+
+- **Insegurança**: o modelo pode fornecer respostas incorretas ou enganosas, sem indicar que não tem certeza sobre a resposta;
+
+<p></p>
+
+- **Incapacidade de generalização**: o modelo pode ter dificuldade em lidar com situações fora do conjunto de dados de treinamento.
+
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+Duas alternativas para mitigar esses problemas são:
+
+- **Fine-Tuning**: ajustar o modelo para um conjunto de dados específico, para que ele possa aprender a tarefa desejada;
+
+
+- **RAG (Retrieve and Generate)**: que é um modelo que combina a capacidade de recuperar informações de um grande banco de dados com a capacidade de gerar texto de um modelo de linguagem.
+
+<div style="text-align:center">
+![](images/RAg_fine_tuning.jpeg){style="margin: 0 0 0 0; width:500px;"}
+</div>
+
+
+
+---
+
+
+
+#### Referências
+
+<hr/>
+
+<div style="font-size:20pt;">
+
+- Reid, Machel, et al. (2024). Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530 .
+
+- Vaswani, A., N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser,
+and I. Polosukhin (2017). Attention is all you need. Advances in neural information
+processing systems 30.
+
+- Devlin, J., M.-W. Chang, K. Lee, and K. Toutanova (2018). Bert: Pre-training of deep
+bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.
+
+- Hirschberg, J. and C. D. Manning (2015). Advances in natural language processing. Sci-
+ence 349 (6245), 261–266.
+
+- Zhou, H., Liu, F., Gu, B., Zou, X., Huang, J., Wu, J., ... & Clifton, D. A. (2023). A survey of large language models in medicine: Progress, application, and challenge. arXiv preprint arXiv:2311.05112.
+
+
+- Singhal, Karan, et al. (2023). Large language models encode clinical knowledge. Nature, 620(7972), 172-180.
+
+- https://github.com/AI-in-Health/MedLLMsPracticalGuide
+
+- https://sites.research.google/med-palm/
+
+
+</div>
+
+
+
+
+----
+
+## Referências
+
+<hr/>
+
+Fontes das imagens utilizadas:
+
+- <https://iaexpert.academy/2017/03/23/ia-simbolica-x-ia-conexionista/>
+
+- <https://www.zendesk.com.br/blog/inteligencia-artificial-simbolica-e-conexionista/>
+
+- <https://bleedaiacademy.com/overview-of-the-field-artificial-intelligence-part-4/>
+
+- <https://medium.com/@tejasdalvi927/demystifying-the-magic-of-convolutional-neural-networks-cnns-b3a6cee08f59>
+
+- <https://synoptek.com/insights/it-blogs/data-insights/ai-ml-dl-and-generative-ai-face-off-a-comparative-analysis/>
+
+- [https://www.researchgate.net/publication/](https://www.researchgate.net/publication/221053431_Application_of_Mixture_of_Experts_to_Construct_Real_Estate_Appraisal_Models)
+[221053431_Application_of_Mixture_of_Experts_to_Construct_Real_Estate_Appraisal_Models](https://www.researchgate.net/publication/221053431_Application_of_Mixture_of_Experts_to_Construct_Real_Estate_Appraisal_Models)
+
+- <https://lena-voita.github.io/nlp_course/word_embeddings.html>
+
+- <https://www.linkedin.com/pulse/power-your-enterprise-llm-fine-tuning-vs-retrieval-augmentation-pgvif/>
+
+-------------------------------------------------------------------
+
+<br/> <br/>
+
+<hr/>
+
+<h1 style="text-align: center;">
+
+OBRIGADO!
+
+</h1>
+
+<hr/>
+
+::: {style="text-align: center"}
+Slide produzido com [quarto](https://quarto.org/)
+:::
+
+<br/> <br/> <br/> <br/>
+
+**Lattes**: [http://lattes.cnpq.br/4617170601890026](http://lattes.cnpq.br/4617170601890026)
+
+**LinkedIn**: [jodavidferreira](https://www.linkedin.com/in/jodavidferreira/)
+
+**Site Pessoal**: <https://jodavid.github.io/>
+
+**e-mail**: <jodavid.ferreira@ufpe.br>

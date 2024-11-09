@@ -1,0 +1,3 @@
+Título: Inteligência Artificial na Saúde: Conceitos, Visão geral sobre IA e utilizações na área da Saúde
+
+Resumo: A Inteligência Artificial (IA) vem transformando diversos setores, e a saúde não é exceção. Esta apresentação abordará os conceitos fundamentais da IA, explorando técnicas como aprendizado de máquina, aprendizagem profunda e processamento de linguagem natural, com foco em suas implicações na área da saúde. Serão apresentadas e discutidas algumas aplicações práticas da IA na saúde, destacando como essa tecnologia vem sendo explorada e expandida nesse campo.

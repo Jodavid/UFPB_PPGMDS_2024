@@ -1,0 +1,841 @@
+---
+title: "Redes Neurais"
+subtitle: "Básico de LLM (Large Language Models)"
+author: "Prof. Jodavid Ferreira"
+institute: "UFPE"
+title-slide-attributes:
+  data-background-image: images/ml_background.png
+  data-background-size: contain
+  data-background-opacity: "0.2"
+format:
+  revealjs:
+    slide-number: c/t
+    #css: ["theme/theme.css"]
+    css: ["css/jodavid.css"]
+    theme: default #dark
+    footer: "Redes Neurais - [Prof. Jodavid Ferreira](https://jodavid.github.io/)"
+    #logo: "images/logo.png"
+    smaller: True
+    incremental: false
+    transition: concave
+    background-transition: convex
+    chalkboard: true
+editor_options: 
+  chunk_output_type: inline
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+## Evolução da IA
+
+<hr/>
+
+::: {style="align-items: center;"}
+![](images/timeline2.png){style="margin: 0 0 0 0; width: 1000px; height: auto;"}
+:::
+
+<!-- Motivação -->
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+![(fonte: AI Experience - Google)](images/google/ia_generativa.png){#timeline1 fig-align="center" width="100%"}
+
+
+---
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+
+### Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+
+::: {.r-hstack}
+::: {data-id="box1" auto-animate-delay="0" style="background: #ed7f30; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:40%;">**Inteligência Artificial**</div>
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #f8cbac; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:45%;">**Machine Learning**</div>
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #fbe5d8; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:45%;">**Deep Learning**</div>
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #fbe5d830; width: 400px; height: 300px; margin: 10px;"}
+<div style="text-align:center; position: relative; top:45%;">**IA Generativa**</div>
+:::
+:::
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+### Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+
+::: {.r-stack}
+::: {data-id="box1" style="background: #ed7f30; width: 550px; height: 550px; border-radius: 500px;"}
+<div style="text-align:center; position: relative; top:3%">**Inteligência Artificial**</div>
+:::
+
+::: {data-id="box2" style="background: #f8cbac; width: 425px; height: 425px; border-radius: 425px;"}
+<div style="text-align:center; position: relative; top:5%;">**Machine Learning**</div>
+:::
+
+::: {data-id="box3" style="background: #fbe5d8; width: 300px; height: 300px; border-radius: 200px;"}
+<div style="text-align:center; position: relative; top:5%;">**Deep Learning**</div>
+:::
+
+::: {data-id="box3" style="background: white; width: 150px; height: 150px; border-radius: 100px;"}
+<div style="text-align:center; position: relative; top:20%;">**IA Generativa**</div>
+:::
+:::
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<h4 style="font-size:22pt; color:red;text-align:center;">
+Mas o que estão por trás da IA Generativa?
+</h4>
+
+. . .
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div class="contrib" style="font-size:18pt;">
+
+  <div class="blockin">
+LLMs - Large Language Models
+  </div>
+  
+  - *inicialmente* foram definidos como modelos projetados para compreender e gerar linguagem natural;
+  - *atualmente* são treinados em grandes quantidades de dados, como livros, imagens, vídeos;
+  - o *"large""* em LLM refere-se ao número de parâmetros que o modelo possui, geralmente na casa dos bilhões. Geralmente utilizados em soluções que necessitam ter contexto similar a interação entre **humanos**.
+
+</div>
+
+:::
+
+::::
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%" style="margin:-490px 0 0 520px"}
+
+<div class="contrib" style="font-size:18pt;">
+  
+  <div class="blockin">
+SLMs - Small Language Models
+  </div>
+  - são modelos menores, no sentido que posuem menos parâmetros, geralmente na faixa de milhões; 
+  - continuam utilizando grandes quantidades de dados como textos, imagens e vídeos;
+  - necessitam de menos recursos computacionais para treinamento e *inferência*, logo, são mais viáveis para uso em dispositivos com recursos limitados, como:
+    - *smartphones e sistemas embarcados*.
+  
+</div>
+
+
+:::
+
+::::
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<h4>Alguns dos modelos em alta do momento?</h4>
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- <div style="color:red;">OpenAI:</div>
+  - **DALL-E** - modelo de geração de imagens;
+  - **ChatGPT** - modelo de linguagem natural - multimodal;
+  - **SORA** - modelo de texto-para-vídeo;
+  - **Whisper** - modelo de audio-para-texto;
+
+- <div style="color:red;">Meta:</div>
+  - **Llama3.1** - modelo de linguagem natural;
+
+:::
+
+::: {.column width="50%"}
+
+- <div style="color:red;">Google:</div>
+  - **GEMINI** - modelo multimodal;
+
+
+
+<div class="contrib">
+
+- <div style="color:red;">Maritaca:</div>
+  - **Sabiá 3^[ainda não saiu o *paper* sobre o modelo.] ** - modelo de linguagem natural;
+  - **Sabiá 2** - modelo de linguagem natural;
+    - baseado no *LLaMA*; 
+
+</div>
+
+
+
+
+:::
+
+::::
+
+
+---
+
+## Introdução à Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+Algunas informações sobre os modelos:
+
+![](images/Modelos_LLM_SINAPE2024.png)
+
+Legenda:
+
+![](images/Legenda_modelos_2024.png){.relative}
+
+<div style="text-align:center; font-size:8pt;">
+Os "dados de treinamento especial" são conjuntos de dados de alta qualidade, cuidadosamente selecionados e organizados. Eles podem incluir dados diversificados e representativos, dados enriquecidos com anotações ou metadados, dados sintéticos, e dados privados ou proprietários. Esses dados são valiosos para criar modelos mais precisos e especializados, capazes de entender nuances e aplicar conhecimento em contextos específicos, como saúde, direito, ou finanças.			
+</div>
+
+---
+
+## Introdução à Inteligência Artificial
+
+<hr/>
+
+Detalhando as duas arquiteturas dos modelos de LLMs, temos:
+
+. . .
+
+<div class="contrib">
+
+  <div class="blockin">
+  Arquitetura *Dense*
+  </div>
+
+é uma arquitetura onde cada neurônio em uma camada é conectado aos demais neurônios na camada seguinte. Essa conectividade total é também conhecida como *fully connected*.
+
+</div>
+
+<div style="margin:10px 0 0 0;">
+</div>
+
+.  .  .
+
+<div class="contrib">
+
+  <div class="blockin">
+  Arquitetura *MoE*
+  </div>
+
+é uma arquitetura de rede neural onde o modelo é dividido em vários "*experts*" (sub-modelos) especializados em diferentes partes do espaço de entrada. Possui uma camada denominada *gating* que determina quais *experts* serão ativados para uma dada entrada.
+
+</div>
+
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+- *Tokens* e *Embeddings* são a base dos modelos de LLMs.
+
+. . .
+
+A **tokenização** é o processo de pegar o texto e transformar as sequências de entrada para números.
+
+  - é um mapeamento direto de *palavras* para números, a mesma palavra vai receber o mesmo *token* (pode ser modelado, mas rapidamente se torna muito grande).
+  - os *tokens* geralmente são palavras, mas também podem ser frases, sinais de pontuação ou até caracteres individuais.
+  - A tokenização é o primeiro passo no processamento de linguagem natural (NLP) e é essencial para a pré-processamento de texto.
+  - ela ajuda a preparar os dados textuais para análise, tornando-os mais estruturados e fáceis de trabalhar.
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+
+![](images/token2.webp){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+
+
+Apesar da referẽncia, palavras grandes podem ser divididas em *subtokens* menores, sendo assim, em 1.000 tokens de palavras em português correspondem aproximadamente a 700 a 750 palavras do nosso idioma.
+
+Essa contagem de palavras em um texto pode variar bastante dependendo da linguagem, do tamanho das palavras e do uso de pontuações.
+
+::: {style="align-items: center;"}
+![](images/token_embeddings.gif){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+:::
+
+
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+
+   - *Embeddings* são vetores numéricos obtidos dos *tokens* e representam palavras, frases ou documentos.
+
+- Os *embeddings* é o processo de transformar o mapeamento do vetor de texto de entrada na matriz de embeddings^[Alguns modelos já incorporam o processo de tokenização.].
+
+- Os *embeddings* faz uma representação mais rica do relacionamento entre os tokens (pode limitar o tamanho e pode ser aprendida).
+
+- Os *embeddings* conseguem capturar a estrutura semântica das palavras ou frases e suas relações no texto.
+
+- Atualmente, elas são criadas usando técnicas de *machine learning*, como Word2Vec ou GloVe e *deep learning*, como BERT, GPT-3, e os modelos mais atuais de LLMs.
+
+---
+
+
+## Tokens e Embeddings
+
+<hr/>
+
+
+![](images/embedd2.webp)
+
+
+---
+
+## Tokens e Embeddings
+
+<hr/>
+
+<br/>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="font-size:18pt">
+
+- As *word embeddings* transformam os valores inteiros únicos obtidos a partir do tokenizador em um array $n$-dimensional.
+
+- Por exemplo, a palavra 'gato' pode ter o valor '20' a partir do tokenizador, mas a camada de *embedding*  utilizará todas as palavras no seu vocabulário associadas a 'gato' para construir o vetor de *embeddings*. Ela encontra "dimensões" ou características, como "ser vivo", "felino", "humano", "gênero", etc.
+
+
+- Assim, a palavra 'gato' terá valores diferentes para cada dimensão/característica.
+
+
+
+</div>
+
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+
+![](images/word-embeddings.png){style="margin: 0 0 0 0; width:1550px;"}
+
+:::
+
+::::
+
+
+
+---
+
+
+## Tokens e Embeddings
+
+<hr/>
+
+<h3 style="text-color:red">Vamos ver um exemplo em python!^[https://colab.research.google.com/drive/1xUh4k-JPsi3gYmUZXs07fWwBkLXc8jdN]</h3>
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="font-size:18pt">
+
+Detalhes importantes:
+
+Similaridade do Cosseno ($Sim_{cos}$):
+
+- Maior valor (próximo de 1): Maior similaridade.
+- Menor valor (próximo de -1): Maior dissimilaridade.
+
+Distância do Cosseno ($D_{cos} = 1 - Sim_{cos}$):
+
+- Maior valor (próximo de 2): Maior dissimilaridade.
+- Menor valor (próximo de 0): Maior similaridade.
+
+
+</div>
+
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+
+<br/>
+
+![](images/simi_eq.png){style="margin: 0 0 0 0; width:550px;"}
+<br/>
+
+![](images/Cosine-similarity.jpg){style="margin: 0 0 0 0; width:550px;"}
+
+:::
+
+::::
+
+
+
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+Alguns conceitos importantes quando se trabalha com algoritmos de LLMs, são:
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="font-size:18pt">
+
+- **Tokenização**: Os dados de entrada são divididos em tokens, focando em texto, é a associação de número inteiro único para cada palavra ou sub-palavra;
+
+- **Embedding**: cada *token* é transformado em um vetor denso (*embedding*);
+
+- **Camadas de Encoder**: são responsáveis por processar e refinar os embeddings;
+
+- **Self-Attention Mechanism**: Cada token na sequência avalia a importância de todos os outros tokens, permitindo a incorporação de contexto global em cada embedding.
+
+- **Saída do Encoder**: O resultado das camadas de encoder é um conjunto de embeddings contextuais, onde cada token embedding contém informações sobre todo o contexto da sequência.
+
+</div>
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+
+![Modelo de Arquitetura de um Transformer. fonte: (Vaswani et al., 2017)](images/google/tranformers_left.png){style="margin: 0 0 0 0; width:350px;"}
+
+:::
+
+::::
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+Alguns conceitos importantes quando se trabalha com algoritmos de LLMs, são:
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="font-size:18pt">
+
+- **Preparação da Entrada do Decoder**: A entrada do decoder é preparada os embeddings contextuais do encoder;
+
+- **Camada de Self-Attention do Decoder**: Semelhante ao encoder, o decoder usa múltiplas cabeças de atenção para capturar diferentes aspectos da relação entre tokens, mas respeitando a ordem causal;
+
+-  **Camada de Atenção Encoder-Decoder**: A camada de atenção encoder-decoder permite que o decoder se concentre em diferentes partes da entrada do encoder, dependendo do token que está sendo gerado.
+
+-  **Saída do Decoder**: O resultado do decoder é um conjunto de embeddings contextuais finais, que são usados para prever o próximo token na sequência de saída.
+
+- **Predição do Próximo Token**: O modelo prediz o próximo token na sequência de saída com base nos embeddings contextuais finais.
+
+
+</div>
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+
+![Modelo de Arquitetura de um Transformer. fonte: (Vaswani et al., 2017)](images/google/tranformers_right.png){style="margin: 0 0 0 0; width:350px;"}
+
+:::
+
+::::
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+- Os modelos possuem alguns hiperparâmetros ajustáveis para inferência dos retornos.
+
+  - Os principais são *Temperatura*, *Top k* e *Top p* (geralmente eles mantém essa ordem de execução no modelo).
+
+Entretanto, vamos falar primeiramente definições de *Top-k* e *Top-p* e depois
+detalharemos sobre a *Temperatura*.
+
+. . .
+
+1. **Top-k**  
+O parâmetro *top-k* limita as previsões do modelo aos *k* tokens mais prováveis em cada etapa da geração. Ao definir um valor para *k*, você está instruindo o modelo a considerar apenas os *k* tokens mais prováveis. Isso pode ajudar a ajustar a saída gerada e garantir que ela siga padrões ou restrições específicas.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+2. *Top-p*, também conhecido como amostragem por núcleo (*nucleus sampling*), controla a probabilidade cumulativa dos tokens gerados. O modelo gera tokens até que a probabilidade cumulativa exceda o limite escolhido (*p*). Essa abordagem permite um controle mais dinâmico sobre o comprimento do texto gerado e incentiva a diversidade na saída, incluindo tokens menos prováveis quando necessário.
+
+> O *top-k* proporciona uma aleatoriedade controlada ao considerar um número fixo de tokens mais prováveis, enquanto o *top-p* permite um controle dinâmico sobre o número de tokens considerados, resultando em diferentes níveis de diversidade no texto gerado.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+A **probabilidade cumulativa** refere-se ao somatório das probabilidades de um conjunto de eventos ou opções, somadas em ordem decrescente de probabilidade até que um certo limite seja atingido
+
+<!--
+No contexto de **geração de texto com modelos de linguagem**, a probabilidade cumulativa é usada no método de amostragem por núcleo (*top-p*), onde o modelo gera tokens com base em uma parte selecionada das probabilidades mais altas.
+-->
+
+#### Exemplo:
+
+Suponha que o modelo tenha os seguintes tokens candidatos, com suas probabilidades associadas:
+
+| Token    | Probabilidade |
+|----------|----------------|
+| Token A  | 0,40           |
+| Token B  | 0,30           |
+| Token C  | 0,15           |
+| Token D  | 0,10           |
+| Token E  | 0,05           |
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+<br/>
+
+Agora, se você definir *top-p = 0,85*, o modelo irá selecionar tokens até que a **probabilidade cumulativa** atinja 0,85.
+
+1. Token A: 0,40 (probabilidade cumulativa = 0,40)
+2. Token B: 0,30 (probabilidade cumulativa = 0,40 + 0,30 = 0,70)
+3. Token C: 0,15 (probabilidade cumulativa = 0,70 + 0,15 = 0,85)
+
+Assim, apenas os tokens A, B e C serão considerados, pois a soma de suas probabilidades atinge 0,85. Tokens com probabilidade mais baixa (como D e E) serão excluídos da escolha, a menos que *top-p* seja aumentado.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+3. *Temperatura*: em geral é aplicada primeiro. Ela ajusta as probabilidades de todos os *tokens* candidatos, "suavizando" ou "acentuando" a distribuição de probabilidade.
+
+  - Com uma temperatura baixa (próxima de 0), as probabilidades mais altas se destacam, e o modelo tende a ser mais conservador, escolhendo sempre os tokens mais prováveis. Com uma temperatura alta (próxima de 1), a distribuição fica mais uniforme, permitindo maior aleatoriedade.
+  
+. . .
+
+Vamos relembrar...
+
+. . .
+
+#### Função de Ativação softmax:
+  
+![](images/softmax.webp){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+O parâmetro de temperatura é aplicado diretamente à função softmax.
+
+![](images/softmax_t.webp){style="margin: 0 0 0 300px; width: 500px; height: auto;"}
+
+
+
+**Efeito da Temperatura**  
+
+À medida que a temperatura se aproxima de 0, as probabilidades de saída se tornam mais "agudas". Uma das probabilidades ficará próxima de 1.
+
+Conforme a temperatura aumenta, as probabilidades de saída se tornam mais "planas" ou "uniformes", reduzindo a diferença entre as probabilidades dos diferentes elementos.
+
+> O intervalo do parâmetro de temperatura é definido entre 0 e 1 na documentação da OpenAI. No contexto da [Cohere](https://cohere.com/blog/llm-parameters-best-outputs-language-ai), os valores de temperatura estão dentro do intervalo de 0 a 5.
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+Código em python para analisar-mos a temperatura^[https://medium.com/@balci.pelin/llm-temperature-659d443b855a]:
+
+```{python eval=F, echo=T}
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create dataset
+df = pd.DataFrame(
+    {"Word": ["donut", "bolo", "maçã", "suco", "livro"],
+     "Logit": [0.216, 0.206, 0.212, 0.210, 0.157]}
+)
+
+# Calculate softmax for different temperatures
+temperatures = [0.1, 0.5, 0.8, 1.0]
+for temp in temperatures:
+    col_name = f"softmax, temp={temp}"
+    df[col_name] = np.round(np.exp(df.Logit / temp) / np.sum(np.exp(df.Logit / temp)), 4)
+
+# Drop the "Logit" column
+df_plot = df.drop("Logit", axis=1)
+
+# Set up colors for the columns
+colors = ['orange', 'green', 'red', 'purple', 'brown']
+
+# Plotting
+df_plot.set_index("Word").plot(kind="bar", color=colors, width=0.8)
+
+# Customize plot
+plt.xlabel('Possible Words')
+plt.ylabel('Output')
+plt.title('Temperature Analysis')
+plt.legend(title="Legend", bbox_to_anchor=(1, 1))
+plt.show()
+
+```
+
+
+<!--
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+```{python, eval=T,echo=F}
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create dataset
+df = pd.DataFrame(
+    {"Word": ["donut", "cake", "apple", "juice", "book"],
+     "Logit": [11, 10.5, 10.8, 10.7, 8]}
+)
+
+# Calculate softmax for different temperatures
+temperatures = [1, 0.8, 0.5, 0.1]
+for temp in temperatures:
+    col_name = f"softmax, temp={temp}"
+    df[col_name] = np.round(np.exp(df.Logit / temp) / np.sum(np.exp(df.Logit / temp)), 4)
+
+# Drop the "Logit" column
+df_plot = df.drop("Logit", axis=1)
+
+# Set up colors for the columns
+colors = ['orange', 'green', 'red', 'purple', 'brown']
+
+# Plotting
+df_plot.set_index("Word").plot(kind="bar", color=colors, width=0.8)
+
+# Customize plot
+plt.xlabel('Possible Words')
+plt.ylabel('Output')
+plt.title('Temperature Analysis')
+plt.legend(title="Legend", bbox_to_anchor=(1, 1))
+plt.show()
+
+```
+
+-->
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+
+Em termos práticos, alguns problemas que temos com LLMs (SLMs) são:
+
+
+
+- **Alucinações**: o modelo gera informações que não estão presentes nos dados de treinamento;
+
+<p></p>
+
+- **Viés**: o modelo pode reproduzir e amplificar preconceitos e estereótipos presentes nos dados de treinamento;
+
+<p></p>
+
+- **Insegurança**: o modelo pode fornecer respostas incorretas ou enganosas, sem indicar que não tem certeza sobre a resposta;
+
+<p></p>
+
+- **Incapacidade de generalização**: o modelo pode ter dificuldade em lidar com situações fora do conjunto de dados de treinamento.
+
+
+
+---
+
+## Inteligência Artificial - LLMs
+
+<hr/>
+
+Duas alternativas para mitigar esses problemas são:
+
+- **Fine-Tuning**: ajustar o modelo para um conjunto de dados específico, para que ele possa aprender a tarefa desejada;
+
+
+- **RAG (Retrieve and Generate)**: que é um modelo que combina a capacidade de recuperar informações de um grande banco de dados com a capacidade de gerar texto de um modelo de linguagem.
+
+<div style="text-align:center">
+![](images/RAg_fine_tuning.jpeg){style="margin: 0 0 0 0; width:500px;"}
+</div>
+
+
+
+---
+
+
+
+#### Referências
+
+<hr/>
+
+<div style="font-size:18pt;">
+
+- Reid, Machel, et al. (2024). Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530 .
+
+- Vaswani, A., N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser,
+and I. Polosukhin (2017). Attention is all you need. Advances in neural information
+processing systems 30.
+
+- Devlin, J., M.-W. Chang, K. Lee, and K. Toutanova (2018). Bert: Pre-training of deep
+bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.
+
+- Hirschberg, J. and C. D. Manning (2015). Advances in natural language processing. Sci-
+ence 349 (6245), 261–266.
+
+</div>
+
+
+----
+
+## Referências
+
+<hr/>
+
+Fontes das imagens utilizadas:
+
+- <https://iaexpert.academy/2017/03/23/ia-simbolica-x-ia-conexionista/>
+
+- <https://www.zendesk.com.br/blog/inteligencia-artificial-simbolica-e-conexionista/>
+
+- <https://bleedaiacademy.com/overview-of-the-field-artificial-intelligence-part-4/>
+
+- <https://medium.com/@tejasdalvi927/demystifying-the-magic-of-convolutional-neural-networks-cnns-b3a6cee08f59>
+
+- <https://synoptek.com/insights/it-blogs/data-insights/ai-ml-dl-and-generative-ai-face-off-a-comparative-analysis/>
+
+- [https://www.researchgate.net/publication/](https://www.researchgate.net/publication/221053431_Application_of_Mixture_of_Experts_to_Construct_Real_Estate_Appraisal_Models)
+[221053431_Application_of_Mixture_of_Experts_to_Construct_Real_Estate_Appraisal_Models](https://www.researchgate.net/publication/221053431_Application_of_Mixture_of_Experts_to_Construct_Real_Estate_Appraisal_Models)
+
+- <https://lena-voita.github.io/nlp_course/word_embeddings.html>
+
+- <https://www.linkedin.com/pulse/power-your-enterprise-llm-fine-tuning-vs-retrieval-augmentation-pgvif/>
+
+------------------------------------------------------------------------
+
+<br/> <br/>
+
+<hr/>
+
+<h1 style="text-align: center;">
+
+OBRIGADO!
+
+</h1>
+
+<hr/>
+
+::: {style="text-align: center"}
+Slide produzido com [quarto](https://quarto.org/)
+:::
+
+<br/> <br/> <br/> <br/>
+
+**Lattes**: [http://lattes.cnpq.br/4617170601890026](http://lattes.cnpq.br/4617170601890026)
+
+**LinkedIn**: [jodavidferreira](https://www.linkedin.com/in/jodavidferreira/)
+
+**Site Pessoal**: <https://jodavid.github.io/>
+
+**e-mail**: <jodavid.ferreira@ufpe.br>
