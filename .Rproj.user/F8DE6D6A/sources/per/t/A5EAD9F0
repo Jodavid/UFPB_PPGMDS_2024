@@ -1,9 +1,9 @@
 {
     "id": "A5EAD9F0",
-    "path": "~/Documents/UFPE/UFPB_PPGMDS/PPGMDS_2024.qmd",
+    "path": "~/Documents/UFPE/UFPB_PPGMDS_2024/PPGMDS_2024.qmd",
     "project_path": "PPGMDS_2024.qmd",
     "type": "quarto_markdown",
-    "hash": "1300837603",
+    "hash": "913711869",
     "contents": "",
     "dirty": false,
     "created": 1731121988321.0,
@@ -13,17 +13,17 @@
         "chunk_output_type": "inline",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "1200,0",
-        "scrollLine": "1192",
+        "cursorPosition": "1070,35",
+        "scrollLine": "1082",
         "docOutlineSize": "160",
         "docOutlineVisible": "1"
     },
     "folds": "",
-    "lastKnownWriteTime": 1731164564,
+    "lastKnownWriteTime": 1731272137,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1731164564975,
+    "last_content_update": 1731272137224,
     "read_only": false,
     "read_only_alternatives": []
 }

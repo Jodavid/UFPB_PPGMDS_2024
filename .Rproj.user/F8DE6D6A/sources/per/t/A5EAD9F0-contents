@@ -46,9 +46,9 @@ Professor Depto. de Estatística da UFPE
 
 <h4 style="text-align: left"> Experiências e Linhas de Pesquisa </h4>
 * Processamento de Imagens;
-* Distribuições matriciais de Probabilidade;
 * Distribuições de Probabilidade Fuzzy;
-* Machine Learning, Deep Learning;
+* Aprendizagem Estatística;
+* IA, Machine Learning, Deep Learning;
 
 <h4 style="text-align: left"> Experiências Profissionais - 2021 | 2024 </h4>
 * HartB Group e ThinkAI Group (Startups com foco em Inteligência Artificial);
@@ -720,8 +720,60 @@ Dessa forma, hoje os algoritmos existentes em ***Machine Learning e Inteligênci
 
 <hr/>
 
+<br/>
 
-<h4>Quais as *hype* do momento?</h4>
+
+> Muitas vezes só consideramos aplicações de Inteligência Artificial quando conseguimos visualizar a solução pronta e funcionando, mas o processo de desenvolvimento de um modelo de IA é muito mais complexo e envolve diversas etapas.
+
+. . .
+
+<br/>
+
+Uma dessas áreas é:
+
+. . .
+
+<div style="text-align:center; font-size:26pt;">
+- **Visão Computacional com solução de IA;**
+</div>
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+<div style="text-align: center;">
+{{< video videos/WhatsApp1.mp4 width="1000" height="490">}}
+</div>
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+<br/>
+
+<div style="text-align: center;">
+{{< video videos/WhatsApp2.mp4 width="1000" height="490">}}
+</div>
+
+
+---
+
+
+## Inteligência Artificial
+
+<hr/>
+
+
+<h4>Modelos de IA Generativa vem em uma crescente nos últimos anos:</h4>
 
 . . .
 
@@ -748,7 +800,7 @@ Dessa forma, hoje os algoritmos existentes em ***Machine Learning e Inteligênci
   - **GEMINI** - modelo multimodal;
   - **LaMDA** - modelo de linguagem natural;
 
-  
+
 - <div style="color:red;">Anthropic:</div>
   - **CLAUDE 3** - modelo de linguagem natural;
 
@@ -784,33 +836,33 @@ Dessa forma, hoje os algoritmos existentes em ***Machine Learning e Inteligênci
 
 **SORA** é um modelo de IA desenvolvido pela OpenAI que pode transformar texto em vídeo. O modelo é capaz de criar vídeos de alta qualidade a partir de descrições de texto.
 
----
+<!-- --- -->
 
-## Inteligência Artificial
+<!-- ## Inteligência Artificial -->
 
-<hr/>
+<!-- <hr/> -->
 
-<div style="text-align: center;">
-{{< video https://youtu.be/nEHCBPGo-5M?si=lUaCWB-jfBPFv_Mi width="900" height="479" style="text-align: center;">}}
-</div>
-
-
-
-**Wonder Studio** é um estúdio de animação japonês que utiliza IA para criar personagens e histórias. O estúdio foi fundado por **Yoichi Ochiai**, um artista e pesquisador de IA.
-
----
-
-## Inteligência Artificial
-
-<hr/>
-
-<div style="text-align: center;">
-{{< video images/video/home-video.3953bf63.mp4 width="900" height="479" >}}
-</div>
+<!-- <div style="text-align: center;"> -->
+<!-- {{< video https://youtu.be/nEHCBPGo-5M?si=lUaCWB-jfBPFv_Mi width="900" height="479" style="text-align: center;">}} -->
+<!-- </div> -->
 
 
 
-**Viggle AI** é uma empresa que utiliza inteligência artificial para criar animações e vídeos.
+<!-- **Wonder Studio** é um estúdio de animação japonês que utiliza IA para criar personagens e histórias. O estúdio foi fundado por **Yoichi Ochiai**, um artista e pesquisador de IA. -->
+
+<!-- --- -->
+
+<!-- ## Inteligência Artificial -->
+
+<!-- <hr/> -->
+
+<!-- <div style="text-align: center;"> -->
+<!-- {{< video images/video/home-video.3953bf63.mp4 width="900" height="479" >}} -->
+<!-- </div> -->
+
+
+
+<!-- **Viggle AI** é uma empresa que utiliza inteligência artificial para criar animações e vídeos. -->
 
 ---
 
@@ -844,26 +896,46 @@ Dessa forma, hoje os algoritmos existentes em ***Machine Learning e Inteligênci
 **GPT-o1** da OpenAI, é uma solução que "tem fortes capacidades de raciocínio e amplo conhecimento do mundo".
 
 
---------------------------------------------
+<!-- -------------------------------------------- -->
 
-<br/> <br/>
-<br/> <br/>
-<br/> <br/>
+<!-- <br/> <br/> -->
+<!-- <br/> <br/> -->
+<!-- <br/> <br/> -->
+
+<!-- <hr/> -->
+
+<!-- <h1 style="text-align: center;"> -->
+
+<!-- IA na área da Saúde -->
+
+<!-- </h1> -->
+
+<!-- <hr/> -->
+
+<!-- ---- -->
+
+
+## Inteligência Artificial na Saúde
 
 <hr/>
 
-<h1 style="text-align: center;">
+<h3 style="text-align: center;color:red; font-size:40px;">Onde modelos de LLM poderiam auxiliar na saúde?</h3>
 
-IA na área da Saúde
+. . .
 
-</h1>
+<div style="text-align: center;">
+![](images/whats_joda.jpeg){style="margin: 0 0 0 0; width:600px; height: auto;"}
+</div>
 
-<hr/>
+<pre>
+</pre>
 
-----
+É um perfil no Instagram que publica imagens de possíveis enfermidadese pede o diagnóstico aos seguidores. Cada imagem apresenta inúmeros diagnósticos.
 
 
-## Aplicações de IA na Saúde
+---
+
+## Inteligência Artificial na Saúde
 
 <hr/>
 
@@ -880,7 +952,7 @@ IA na área da Saúde
 ----
 
 
-## Aplicações de IA na Saúde
+## Inteligência Artificial na Saúde
 
 <hr/>
 
@@ -905,7 +977,7 @@ Quais são os objetivos de LLM para saúde?
 ----
 
 
-## Aplicações de IA na Saúde
+## Inteligência Artificial na Saúde
 
 <hr/>
 
@@ -929,7 +1001,7 @@ Quais são os objetivos de LLM para saúde?
 ----
 
 
-## Aplicações de IA na Saúde
+## Inteligência Artificial na Saúde
 
 <hr/>
 
@@ -944,7 +1016,7 @@ Quais são os objetivos de LLM para saúde?
 ----
 
 
-## Aplicações de IA na Saúde
+## Inteligência Artificial na Saúde
 
 
 <hr/>
@@ -971,7 +1043,7 @@ Quais são os objetivos de LLM para saúde?
 ----
 
 
-## Aplicações de IA na Saúde
+## Inteligência Artificial na Saúde
 
 <hr/>
 
@@ -996,7 +1068,7 @@ Que são consideradas bases de dados médicas que cobrem amplamente o conhecimen
 ----
 
 
-## Aplicações de IA na Saúde
+## Inteligência Artificial na Saúde
 
 <hr/>
 
