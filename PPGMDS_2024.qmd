@@ -27,38 +27,36 @@ editor:
     wrap: 72
 ---
 
+<!-- ::: {style="display: flex; align-items: center;"} -->
+<!-- <div style="font-size:16pt;"> -->
+<!-- ![](images/jodavid.jpg){style="margin: 50px 0 0 0; width: 750px; height: auto;"} -->
+
+<!-- Professor Depto. de Estatística da UFPE -->
+<!-- </div> -->
+
+<!-- <div style="font-size:18pt; margin:0px 0 0 0px;"> -->
+<!-- <h4 style="text-align: left"> Quem é o Dr. Jodavid Ferreira? </h4> -->
+<!-- * Graduação em Estatística pela UFPB - 2015; -->
+<!-- * Mestrado em Estatística pela UFPE - 2017; -->
+<!-- * Doutor em Estatística pela UFPE - 2021; -->
+<!-- * Pós-Doutorado em Modelos de Decisão e Saúde (UFPB) - 2024; -->
 
 
-::: {style="display: flex; align-items: center;"}
-<div style="font-size:16pt;">
-![](images/jodavid.jpg){style="margin: 50px 0 0 0; width: 750px; height: auto;"}
+<!-- <h4 style="text-align: left"> Experiências e Linhas de Pesquisa </h4> -->
+<!-- * Processamento de Imagens; -->
+<!-- * Distribuições de Probabilidade Fuzzy; -->
+<!-- * Aprendizagem Estatística; -->
+<!-- * IA, Machine Learning, Deep Learning; -->
 
-Professor Depto. de Estatística da UFPE
-</div>
+<!-- <h4 style="text-align: left"> Experiências Profissionais - 2021 | 2024 </h4> -->
+<!-- * HartB Group e ThinkAI Group (Startups com foco em Inteligência Artificial); -->
+<!-- * Certificado em IA pela **Huawei** e em Engenharia de dados pela **Google**; -->
 
-<div style="font-size:18pt; margin:0px 0 0 0px;">
-<h4 style="text-align: left"> Quem é o Dr. Jodavid Ferreira? </h4>
-* Graduação em Estatística pela UFPB - 2015;
-* Mestrado em Estatística pela UFPE - 2017;
-* Doutor em Estatística pela UFPE - 2021;
-* Pós-Doutorado em Modelos de Decisão e Saúde (UFPB) - 2024;
+<!-- </div> -->
+<!-- ::: -->
 
 
-<h4 style="text-align: left"> Experiências e Linhas de Pesquisa </h4>
-* Processamento de Imagens;
-* Distribuições de Probabilidade Fuzzy;
-* Aprendizagem Estatística;
-* IA, Machine Learning, Deep Learning;
-
-<h4 style="text-align: left"> Experiências Profissionais - 2021 | 2024 </h4>
-* HartB Group e ThinkAI Group (Startups com foco em Inteligência Artificial);
-* Certificado em IA pela **Huawei** e em Engenharia de dados pela **Google**;
-
-</div>
-:::
-  
-  
---------------------------------------------------------------------
+<!-- -------------------------------------------------------------------- -->
 
 ## Inteligência Artificial
 
